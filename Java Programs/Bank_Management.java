@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// Base class
 class BankAccount {
     private String accountHolder;
     private double balance;
@@ -32,7 +31,6 @@ class BankAccount {
     }
 }
 
-// Derived classes
 class SavingsAccount extends BankAccount {
     public SavingsAccount(String accountHolder, double balance) {
         super(accountHolder, balance);
