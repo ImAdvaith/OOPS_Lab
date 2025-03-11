@@ -26,7 +26,7 @@ public class Square_Series
 
         }
 
-        System.out.println("Sum of series:"+sum);
+        System.out.println("Sum of series:" + sum);
 
     }
 
