@@ -16,12 +16,16 @@ class SMSNotification extends Notification {
     }
 }
 
+class NotificationManager {
+    public void notifyUser(Notification notification, String message) {
+        notification.send(message);
+    }
+}
+
 public class Main {
     public static void main(String[] args) {
-        Notification notification;
-        notification = new EmailNotification();
-        notification.send("Hello via Email");
-        notification = new SMSNotification();
-        notification.send("Hello via SMS");
+        NotificationManager manager = new NotificationManager();
+        manager.notifyUser(new EmailNotification(), "Hello via Email");
+        manager.notifyUser(new SMSNotification(), "Hello via SMS");
     }
 }
