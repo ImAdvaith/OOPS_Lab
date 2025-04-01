@@ -3,7 +3,7 @@ class OrderProcessor {
     private String details;
     private double amount;
 
-    // Constructor Overloading
+
     public OrderProcessor(double amount) {
         this.paymentMethod = "Cash";
         this.amount = amount;
