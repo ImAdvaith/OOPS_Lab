@@ -1,4 +1,4 @@
-// SelfDrivingCar Interface
+
 interface SelfDrivingCar {
     void navigate(String destination);
     void avoidObstacles();
@@ -7,7 +7,7 @@ interface SelfDrivingCar {
     void manageBattery();
 }
 
-// Tesla Autopilot Implementation
+
 class Tesla implements SelfDrivingCar {
     public void navigate(String destination) {
         System.out.println(" Tesla Autopilot: Calculating best route to " + destination + " using AI.");
@@ -34,7 +34,7 @@ class Tesla implements SelfDrivingCar {
     }
 }
 
-// Waymo Autonomous Car Implementation
+
 class Waymo implements SelfDrivingCar {
     public void navigate(String destination) {
         System.out.println(" Waymo AI: Navigating to " + destination + " using high-resolution maps.");
@@ -57,7 +57,7 @@ class Waymo implements SelfDrivingCar {
     }
 }
 
-// Main Class
+
 public class EnhancedSelfDrivingSystem {
     public static void main(String[] args) {
         SelfDrivingCar tesla = new Tesla();
