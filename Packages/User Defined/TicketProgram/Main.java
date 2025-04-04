@@ -32,11 +32,11 @@ public class Main {
                     manager.displayAllTickets();
                     break;
                 case 4:
-                    System.out.println("👋 Thank you for using the system!");
+                    System.out.println(" Thank you for using the system!");
                     sc.close();
                     return;
                 default:
-                    System.out.println("❗ Invalid option.");
+                    System.out.println(" Invalid option.");
             }
         }
     }
