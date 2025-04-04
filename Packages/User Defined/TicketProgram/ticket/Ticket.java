@@ -12,8 +12,8 @@ public class Ticket {
     }
 
     public void displayTicket() {
-        System.out.println("🎫 Ticket ID: " + ticketID);
-        System.out.println("👤 Name: " + customerName);
-        System.out.println("🎤 Event: " + eventName);
+        System.out.println("Ticket ID: " + ticketID);
+        System.out.println(" Name: " + customerName);
+        System.out.println(" Event: " + eventName);
     }
 }
