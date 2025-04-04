@@ -59,7 +59,7 @@ class BankAccount {
 
 public class SecureBankingSystem {
     public static void main(String[] args) {
-        BankAccount myAccount = new BankAccount("Alice", 5000, "1234");
+        BankAccount myAccount = new BankAccount("Advaith", 5000, "1234");
         System.out.println("🏦 Welcome, " + myAccount.getAccountHolder());
 
         
