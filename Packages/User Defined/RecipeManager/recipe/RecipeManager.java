@@ -11,16 +11,16 @@ public class RecipeManager {
 
     public void addRecipe(Recipe recipe) {
         recipes.add(recipe);
-        System.out.println("✅ Recipe added: " + recipe.getRecipeName());
+        System.out.println(" Recipe added: " + recipe.getRecipeName());
     }
 
     public void displayAllRecipes() {
         if (recipes.isEmpty()) {
-            System.out.println("❌ No recipes available.");
+            System.out.println("No recipes available.");
             return;
         }
 
-        System.out.println("\n📚 All Recipes:");
+        System.out.println("\nAll Recipes:");
         for (Recipe r : recipes) {
             r.displayRecipe();
             System.out.println("----------------------");
