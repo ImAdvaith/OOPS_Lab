@@ -19,12 +19,12 @@ abstract class TrafficSystem {
 
 
 class AITrafficControl extends TrafficSystem {
-    private int trafficDensity; // 0 to 100 (percentage)
+    private int trafficDensity; 
     private boolean emergencyVehicleDetected;
 
     AITrafficControl(String location) {
         super(location);
-        this.trafficDensity = new Random().nextInt(101); // Random traffic level
+        this.trafficDensity = new Random().nextInt(101); 
         this.emergencyVehicleDetected = false;
     }
 
@@ -34,11 +34,11 @@ class AITrafficControl extends TrafficSystem {
 
     public void controlSignals() {
         if (trafficDensity > 80) {
-            System.out.println("🔴 Heavy Traffic! Extending red light duration.");
+            System.out.println(" Heavy Traffic! Extending red light duration.");
         } else if (trafficDensity > 40) {
-            System.out.println("🟡 Moderate Traffic! Balancing signal timings.");
+            System.out.println(" Moderate Traffic! Balancing signal timings.");
         } else {
-            System.out.println("🟢 Light Traffic! Reducing wait time for vehicles.");
+            System.out.println(" Light Traffic! Reducing wait time for vehicles.");
         }
     }
 
