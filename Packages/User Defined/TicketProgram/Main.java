@@ -6,7 +6,6 @@ public class Main {
         TicketManager manager = new TicketManager();
         Scanner sc = new Scanner(System.in);
 
-        // Add sample events
         manager.addEvent("Concert Night", "2025-04-15", 5);
         manager.addEvent("Comedy Fest", "2025-04-20", 3);
         manager.addEvent("Tech Conference", "2025-05-01", 4);
