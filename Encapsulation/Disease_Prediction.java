@@ -58,7 +58,7 @@ class Patient {
 
 public class DiseasePredictionSystem {
     public static void main(String[] args) {
-        Patient patient1 = new Patient("John Doe", 30, 75.5);
+        Patient patient1 = new Patient("Rohith", 30, 75.5);
 
         patient1.setSymptoms(new String[]{"fever", "cough"});
         
