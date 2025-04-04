@@ -1,34 +1,19 @@
 package ticket;
 
 public class Ticket {
+    private String ticketID;
     private String customerName;
-    private String destination;
-    private int seatNumber;
+    private String eventName;
 
-    public Ticket(String customerName, String destination, int seatNumber) {
+    public Ticket(String ticketID, String customerName, String eventName) {
+        this.ticketID = ticketID;
         this.customerName = customerName;
-        this.destination = destination;
-        this.seatNumber = seatNumber;
+        this.eventName = eventName;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public int getSeatNumber() {
-        return seatNumber;
-    }
-
-    @Override
-    public String toString() {
-        return "Ticket for " + customerName + " to " + destination + " | Seat: " + seatNumber;
-    }
-
-    public String toCSV() {
-        return customerName + "," + destination + "," + seatNumber;
+    public void displayTicket() {
+        System.out.println("🎫 Ticket ID: " + ticketID);
+        System.out.println("👤 Name: " + customerName);
+        System.out.println("🎤 Event: " + eventName);
     }
 }
