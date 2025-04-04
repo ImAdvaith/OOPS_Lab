@@ -12,7 +12,7 @@ abstract class StockTrading {
     abstract void sellStock(String stock, double amount);
 
     public void marketStatus() {
-        System.out.println("📈 AI Stock Trading activated for " + traderName);
+        System.out.println("AI Stock Trading activated for " + traderName);
     }
 }
 
@@ -29,25 +29,25 @@ class AIStockBot extends StockTrading {
 
     public void analyzeMarket() {
         stockPrice += (Math.random() * 20 - 10);
-        System.out.println("📊 AI Market Analysis: Current stock price is $" + String.format("%.2f", stockPrice));
+        System.out.println("AI Market Analysis: Current stock price is $" + String.format("%.2f", stockPrice));
     }
 
     public void buyStock(String stock, double amount) {
         if (balance >= amount) {
-            System.out.println("💰 Buying " + stock + " worth $" + amount);
+            System.out.println("Buying " + stock + " worth $" + amount);
             balance -= amount;
         } else {
-            System.out.println("❌ Insufficient balance to buy " + stock);
+            System.out.println("Insufficient balance to buy " + stock);
         }
     }
 
     public void sellStock(String stock, double amount) {
         balance += amount;
-        System.out.println("📉 Selling " + stock + " for $" + amount);
+        System.out.println("Selling " + stock + " for $" + amount);
     }
 
     public void showBalance() {
-        System.out.println("💲 Current Balance: $" + balance);
+        System.out.println(" Current Balance: $" + balance);
     }
 }
 
