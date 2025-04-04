@@ -10,7 +10,7 @@ public class Main {
         manager.addEvent("Comedy Fest", "2025-04-20", 3);
         manager.addEvent("Tech Conference", "2025-05-01", 4);
 
-        System.out.println("🎉 Welcome to the Event Ticket Booking System!");
+        System.out.println(" Welcome to the Event Ticket Booking System!");
 
         while (true) {
             System.out.println("\n1. View Events\n2. Book Ticket\n3. View Booked Tickets\n4. Exit");
