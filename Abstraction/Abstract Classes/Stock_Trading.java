@@ -1,6 +1,5 @@
 import java.util.Random;
 
-// Abstract Class: Stock Trading System
 abstract class StockTrading {
     protected String traderName;
 
@@ -17,7 +16,7 @@ abstract class StockTrading {
     }
 }
 
-// AI-Based Trading Bot
+
 class AIStockBot extends StockTrading {
     private double balance;
     private double stockPrice;
@@ -25,11 +24,11 @@ class AIStockBot extends StockTrading {
     AIStockBot(String traderName, double initialBalance) {
         super(traderName);
         this.balance = initialBalance;
-        this.stockPrice = 100 + new Random().nextInt(100); // Initial stock price between $100-$200
+        this.stockPrice = 100 + new Random().nextInt(100); 
     }
 
     public void analyzeMarket() {
-        stockPrice += (Math.random() * 20 - 10); // Simulate price changes (-10 to +10)
+        stockPrice += (Math.random() * 20 - 10);
         System.out.println("📊 AI Market Analysis: Current stock price is $" + String.format("%.2f", stockPrice));
     }
 
@@ -52,7 +51,7 @@ class AIStockBot extends StockTrading {
     }
 }
 
-// Main Class
+
 public class AIStockTrading {
     public static void main(String[] args) {
         AIStockBot trader = new AIStockBot("Elon Trader", 5000);
