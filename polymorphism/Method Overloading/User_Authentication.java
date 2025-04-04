@@ -4,7 +4,7 @@ class Authenticator {
         return username.equals("user") && password.equals("pass123");
     }
 
-    public boolean authenticate(String email, String password) {
+    public boolean authenticateByEmail(String email, String password) {
         return email.equals("user@example.com") && password.equals("pass123");
     }
 
@@ -19,7 +19,7 @@ public class UserAuthentication {
 
         System.out.println("Authentication (username/password): " + auth.authenticate("user", "pass123"));
 
-        System.out.println("Authentication (email/password): " + auth.authenticate("user@example.com", "pass123"));
+        System.out.println("Authentication (email/password): " + auth.authenticateByEmail("user@example.com", "pass123"));
 
         System.out.println("Authentication (username/password/OTP): " + auth.authenticate("user", "pass123", 456789));
     }
