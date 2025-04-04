@@ -21,19 +21,19 @@ public class TicketManager {
 
     public void bookTicket(String customerName, String eventName) {
         if (customerName == null || customerName.trim().isEmpty()) {
-            System.out.println("❌ Invalid name.");
+            System.out.println(" Invalid name.");
             return;
         }
 
         Event event = events.get(eventName.toLowerCase());
 
         if (event == null) {
-            System.out.println("❌ Event not found.");
+            System.out.println(" Event not found.");
             return;
         }
 
         if (!event.bookSeat()) {
-            System.out.println("❌ No seats available for this event.");
+            System.out.println(" No seats available for this event.");
             return;
         }
 
@@ -41,13 +41,13 @@ public class TicketManager {
         Ticket t = new Ticket(ticketID, customerName.trim(), event.getEventName());
         tickets.add(t);
 
-        System.out.println("\n✅ Ticket Booked Successfully!");
+        System.out.println("\n Ticket Booked Successfully!");
         t.displayTicket();
     }
 
     public void displayAllTickets() {
         if (tickets.isEmpty()) {
-            System.out.println("❗ No tickets booked yet.");
+            System.out.println(" No tickets booked yet.");
             return;
         }
 
