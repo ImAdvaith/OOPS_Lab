@@ -1,36 +1,60 @@
 package ticket;
 
-import java.util.ArrayList;
-import java.io.*;
+import java.util.*;
 
 public class TicketManager {
-    private ArrayList<Ticket> ticketList;
-    private static final String FILE_NAME = "tickets.txt";
+    private ArrayList<Ticket> tickets = new ArrayList<>();
+    private HashMap<String, Event> events = new HashMap<>();
+    private int ticketCounter = 1;
 
-    public TicketManager() {
-        ticketList = new ArrayList<>();
+    public void addEvent(String name, String date, int seats) {
+        events.put(name.toLowerCase(), new Event(name, date, seats));
     }
 
-    public void bookTicket(String name, String destination, int seatNumber) {
-        Ticket ticket = new Ticket(name, destination, seatNumber);
-        ticketList.add(ticket);
-        saveToFile(ticket);
-    }
-
-    public void showAllTickets() {
-        System.out.println("\n📋 All Booked Tickets:");
-        for (Ticket t : ticketList) {
-            System.out.println(t);
+    public void displayAllEvents() {
+        System.out.println("\n Available Events:");
+        for (Event e : events.values()) {
+            e.displayEventDetails();
+            System.out.println("---------------");
         }
     }
 
-    private void saveToFile(Ticket ticket) {
-        try (FileWriter fw = new FileWriter(FILE_NAME, true);
-             BufferedWriter bw = new BufferedWriter(fw)) {
-            bw.write(ticket.toCSV());
-            bw.newLine();
-        } catch (IOException e) {
-            System.out.println("❌ Could not save ticket.");
+    public void bookTicket(String customerName, String eventName) {
+        if (customerName == null || customerName.trim().isEmpty()) {
+            System.out.println("❌ Invalid name.");
+            return;
+        }
+
+        Event event = events.get(eventName.toLowerCase());
+
+        if (event == null) {
+            System.out.println("❌ Event not found.");
+            return;
+        }
+
+        if (!event.bookSeat()) {
+            System.out.println("❌ No seats available for this event.");
+            return;
+        }
+
+        String ticketID = "TCK" + String.format("%03d", ticketCounter++);
+        Ticket t = new Ticket(ticketID, customerName.trim(), event.getEventName());
+        tickets.add(t);
+
+        System.out.println("\n✅ Ticket Booked Successfully!");
+        t.displayTicket();
+    }
+
+    public void displayAllTickets() {
+        if (tickets.isEmpty()) {
+            System.out.println("❗ No tickets booked yet.");
+            return;
+        }
+
+        System.out.println("\n All Tickets:");
+        for (Ticket t : tickets) {
+            t.displayTicket();
+            System.out.println("---------------");
         }
     }
 }
